@@ -3,5 +3,7 @@ React:
     First of all instsll NodeJs
     then
 
-    >npx create-react-app projrctreact
-    >npm install react-transition-group
+npx create-react-app projrctreact
+npm install react-transition-group
+npm install react-router-dom
+npm install react-icons
