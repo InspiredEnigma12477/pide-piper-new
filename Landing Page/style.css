@@ -1,0 +1,164 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0px;
+  background: #36393f;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+#main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+#box1 {
+  width: 512px;
+  height: 512px;
+  background-image: url("1.png");
+  position: absolute;
+  bottom: -100%;
+  left: 30%;
+  animation: anim 2s forwards, anim2 3s forwards 3s;
+}
+#box::after {
+  content: "";
+  position: absolute;
+  width: 512px;
+  height: 512px;
+  background-image: url("2.png");
+  left: 0px;
+  z-index: -1;
+}
+@keyframes anim {
+  from {
+    bottom: 100%;
+  }
+  to {
+    bottom: 20%;
+  }
+}
+@keyframes anim2 {
+  from {
+    left: 30%;
+    width: 512px;
+  }
+  to {
+    width: 0px;
+    left: 50px;
+  }
+}
+#box2 {
+  width: auto;
+  height: auto;
+  font-family: "Bahnschrift Condensed";
+  color: white;
+  font-size: 10em;
+  font-weight: 500px;
+  line-height: 130px;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  overflow: hidden;
+}
+#text {
+  position: relative;
+  left: -100%;
+  animation: anim3 2s forwards 3s;
+}
+@keyframes anim3 {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+#box {
+  width: auto;
+  height: auto;
+  font-family: "Bahnschrift Condensed";
+  color: white;
+  font-size: 2em;
+  font-weight: 10px;
+  line-height: 50px;
+  position: absolute;
+  top: 425px;
+  left: 100px;
+  overflow: hidden;
+}
+#text2 {
+  position: relative;
+  left: -100%;
+  animation: anim3 2s forwards 3s;
+}
+@keyframes anim3 {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+#box3 {
+  overflow: hidden;
+}
+#container {
+  width: 100%;
+  position: absolute;
+  top: -100%;
+  animation: anim4 2s forwards 2.5s;
+}
+#logo {
+  float: left;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+#logo img {
+  width: 75px;
+}
+#menu {
+  font-family: "Bahnschrift Condensed";
+  font-size: 16px;
+  color: white;
+  letter-spacing: 2px;
+  margin-right: 100px;
+  margin-top: 50;
+  float: right;
+}
+#menu ul {
+  list-style: none;
+}
+#menu ul li {
+  display: inline-block;
+  margin-left: 50px;
+}
+#menu ul li:hover {
+  color: tomato;
+  transition: 0.5s;
+}
+#menu ul li:after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+  transform: translateX(-50%) scaleX(1);
+}
+@keyframes anim4 {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+#footer {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-family: sans-serif;
+  font-weight: 300;
+
+  margin-top: auto;
+}
