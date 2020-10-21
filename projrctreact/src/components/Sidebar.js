@@ -12,7 +12,7 @@ function Sidebar() {
 
     return (
         <>
-            <div className="navbar">
+            <div className="navbar flex">
                 <Link to='#' className='menu-bars'>
                     <FaIcons.FaBars onClick={showSidebar}/>
                 </Link>

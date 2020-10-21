@@ -16,13 +16,27 @@ function App() {
         </Switch>
         
         <Heading/>
-        <NavItem icon="😁" />
-        <NavItem icon="😁" />
-        <NavItem icon="😁" />
-        
-        <NavItem icon="🧡">
-        <DropdownMenu></DropdownMenu>
-        </NavItem>
+        <div className="nav-items flex">
+          <NavItem icon="🐱" >
+              <DropdownMenu title = "Shivam" />
+          </NavItem>
+
+          <NavItem icon="🐷" >
+              <DropdownMenu title = "Mansi"/>
+          </NavItem>
+
+          <NavItem icon="🦄" >
+              <DropdownMenu title = "Pratik"/>
+          </NavItem>
+          
+          <NavItem  icon="🐼">
+              <DropdownMenu title = "Ankita"/>
+          </NavItem>
+          
+          <NavItem icon="🧡">
+              <DropdownMenu/>
+          </NavItem>
+        </div>
         </Navbar>
       </Router>   
     </>
@@ -31,7 +45,7 @@ function App() {
 
 function Heading () {
   return(
-    <div className="heading">
+    <div className="heading flex">
       <h1 className="heading-h1">PDEA's College of Engineering, Manjari</h1>
     </div>
   );  
@@ -49,8 +63,8 @@ function NavItem(props) {
   const [open, setOpen] = useState(false);
 
   return(
-    <li className="nav-item">
-      <a href="#" className="icon-button" onClick={ () => setOpen(!open)}>
+    <li className="nav-item flex">
+      <a href="#" className="icon-button flex"  onClick={ () => setOpen(!open)}>
         {props.icon}
       </a>
 
@@ -59,7 +73,7 @@ function NavItem(props) {
   ); 
 }
 
-function DropdownMenu(){
+function DropdownMenu(props){
 
   const [activeMenu, setActiveMenu] = useState('main');
   const [menuHeight, setMenuHeight] = useState(null);
@@ -69,11 +83,14 @@ function DropdownMenu(){
     setMenuHeight(height);
   }
 
+      var title = props.title;
+  
+
   function DropdownItem(props){
     return(
       <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
         <span className="icon-button">{props.leftIcon}</span>
-        {props.children}
+        {title}
         <span className="icon-right">{props.rightIcon}</span>
       </a>
     );

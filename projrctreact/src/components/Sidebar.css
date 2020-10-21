@@ -11,12 +11,12 @@
 
 }
 
+
 .navbar{
     background-color: var(--bg);
     height: 60px;
-    display: flex;
     justify-content: start;
-    align-items: center;
+    
 }
 .menu-bars{
     margin: 2rem;
