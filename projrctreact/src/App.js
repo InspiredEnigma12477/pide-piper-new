@@ -2,7 +2,7 @@ import React, { useState,  useEffect, useRef  } from 'react';
 import {CSSTransition} from 'react-transition-group'
 import './App.css';
 import * as FaIcons from 'react-icons/fa';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/Sidebar/Sidebar';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
         </div>
         </Navbar>
       </Router>   
-    </>
+    < / >
   );
 }
 
