@@ -1,180 +1,162 @@
-html {
-  height: 100%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
-  margin: 0px;
-  background: #36393f;
-  height: 100%;
+  font-family: "bahnschrift condensed";
+  background: black;
+  color: #edf0f1;
+  line-height: 1.6;
+  height: 100vh;
+}
 
+header {
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: #24252a;
+}
+.container {
   display: flex;
   flex-direction: column;
-}
-#main {
   width: 100%;
   height: 100%;
-  position: absolute;
-  overflow: hidden;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
-#box1 {
-  width: 512px;
-  height: 512px;
-  background-image: url("1.png");
-  position: absolute;
-  bottom: -100%;
-  left: 30%;
-  animation: anim 2s forwards, anim2 3s forwards 3s;
+.logo {
+  cursor: pointer;
 }
-#box1:after {
-  content: "";
-  position: absolute;
-  width: 512px;
-  height: 512px;
-  background-image: url("2.png");
-  left: 0px;
-  z-index: -1;
-}
-@keyframes anim {
-  from {
-    bottom: 100%;
-  }
-  to {
-    bottom: 20%;
-  }
-}
-@keyframes anim2 {
-  from {
-    left: 30%;
-    width: 512px;
-  }
-  to {
-    width: 0px;
-    left: 50px;
-  }
-}
-#box2 {
-  width: auto;
-  height: auto;
-  font-family: "Bahnschrift Condensed";
-  color: white;
-  font-size: 10em;
-  font-weight: 500px;
-  line-height: 130px;
-  position: absolute;
-  top: 200px;
-  left: 100px;
-  overflow: hidden;
-}
-#text {
-  position: relative;
-  left: -100%;
-  animation: anim3 2s forwards 3s;
-}
-@keyframes anim3 {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-#pox {
-  width: auto;
-  height: auto;
-  font-family: "Bahnschrift Condensed";
-  color: white;
-  font-size: 2em;
-  font-weight: 10px;
-  line-height: 50px;
-  position: absolute;
-  top: 425px;
-  left: 100px;
-  overflow: hidden;
-}
-#text2 {
-  position: relative;
-  left: -100%;
-  animation: anim3 2s forwards 3s;
-}
-@keyframes anim3 {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-#box3 {
-  overflow: hidden;
-}
-#container {
-  width: 100%;
-  position: absolute;
-  top: -100%;
-  animation: anim4 2s forwards 2.5s;
-}
-#logo {
-  float: left;
-  margin-left: 100px;
-  margin-top: 20px;
-}
-#logo img {
-  width: 75px;
-}
-#menu {
-  font-family: "Bahnschrift Condensed";
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 2px;
-  margin-right: 100px;
-  margin-top: 30;
-  float: right;
-}
-#menu ul {
-  list-style: none;
-}
-#menu ul li {
-  display: inline-block;
-  margin-left: 50px;
-}
-#menu ul li:hover {
-  color: tomato;
-  transition: 0.5s;
-}
-#menu ul li:after {
-  -webkit-transform: translateX(-50%) scaleX(1);
-  transform: translateX(-50%) scaleX(1);
-}
-@keyframes anim4 {
-  from {
-    top: -100%;
-  }
-  to {
-    top: 0%;
-  }
-}
-#footer {
-  text-align: center;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  font-family: sans-serif;
-  font-weight: 300;
 
-  margin-top: auto;
-}
-a {
-  font-family: "Bahnschrift Condensed";
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
+.nav__links a,
+.cta,
+.overlay__content a {
+  display: flex;
+  flex-direction: column;
+  font-family: "bahnschrift condensed";
+  font-size: 17px;
+  font-weight: 400;
+  color: #edf0f1;
   text-decoration: none;
-  letter-spacing: 2px;
-  margin-right: 100px;
-  margin-top: 30;
-  float: right;
 }
-a:hover {
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
   color: tomato;
-  transition: 0.5s;
+}
+
+.cta {
+  padding: 9px 25px;
+  background-color: tomato;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 150vh;
+  scroll-snap-align: center;
+}
+section h1 {
+  font-size: 4rem;
+}
+section p {
+  font-size: 1.5rem;
+}
+section#home {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+section#home h1 {
+  position: absolute;
+  top: 30%;
+  right: 75%;
+}
+section#home h2 {
+  position: absolute;
+  top: 42%;
+  right: 73%;
+}
+section#about {
+  display: flex;
+  flex-direction: column;
+  background-color: tomato;
+}
+section#about h1 {
+  position: relative;
+  top: -39%;
+  right: 0%;
+}
+section#service {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-color: white;
+}
+section#service h1 {
+  position: relative;
+  top: -39%;
+  right: 0%;
+}
+section#contact {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-color: tomato;
+}
+section#contact h1 {
+  position: relative;
+  top: -39%;
+  right: 0%;
+}
+section#contact p {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-color: tomato;
+}
+
+.txt-type > .txt {
+  border-right: 0.1rem solid #edf0f1;
+  animation: blinkTextCursor 700ms steps(40) infinite normal;
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 1.5rem);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+.txt {
+  font-size: 4em;
+  position: absolute;
+  top: 30%;
+  right: 55%;
 }
