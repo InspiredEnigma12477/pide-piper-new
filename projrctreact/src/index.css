@@ -12,17 +12,6 @@ code {
     monospace;
 }
 
-:root{
-  --bg: #242526;
-  --bg-accent: #484a4d;
-  --text-color: #dadce1;
-  --text-heading: #fff;
-  --nav-size: 9vh;
-  --border: 1px solid #474a4d;
-  --border-radius: 8px;
-  --speed: 500ms;
-}
-
 .flex{
   display: flex;
   align-items: center;

@@ -1,9 +1,21 @@
 import React, { useState,  useEffect, useRef  } from 'react';
 import {CSSTransition} from 'react-transition-group'
 import './App.css';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import Sidebar from './components/Sidebar/Sidebar';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {DropdownMenu} from './components/Dropdown/Dropdown'
+
+{/*
+import { ReactComponent as BellIcon } from './icons/bell.svg';
+import { ReactComponent as MessengerIcon } from './icons/messenger.svg';
+import { ReactComponent as CaretIcon } from './icons/caret.svg';
+import { ReactComponent as PlusIcon } from './icons/plus.svg';
+import { ReactComponent as CogIcon } from './icons/cog.svg';
+import { ReactComponent as ChevronIcon } from './icons/chevron.svg';
+import { ReactComponent as ArrowIcon } from './icons/arrow.svg';
+import { ReactComponent as BoltIcon } from './icons/bolt.svg';
+*/}
 
 function App() {
   return (
@@ -36,10 +48,11 @@ function App() {
           <NavItem icon="🧡">
               <DropdownMenu/>
           </NavItem>
+          
         </div>
-        </Navbar>
+      </Navbar>
       </Router>   
-    < / >
+    </>
   );
 }
 
@@ -73,11 +86,15 @@ function NavItem(props) {
   ); 
 }
 
-function DropdownMenu(props){
+{/*function DropdownMenu(props){
 
   const [activeMenu, setActiveMenu] = useState('main');
   const [menuHeight, setMenuHeight] = useState(null);
+  const dropdownRef = useRef(null);
 
+  useEffect(() => {
+    setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
+  }, [])
   function calcHeight(el){
     const height =el.offsetHeight;
     setMenuHeight(height);
@@ -90,56 +107,74 @@ function DropdownMenu(props){
     return(
       <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
         <span className="icon-button">{props.leftIcon}</span>
-        {title}
+        {props.children}
         <span className="icon-right">{props.rightIcon}</span>
       </a>
     );
   }
 
   return(
-    <div className="dropdown" style={{ height: menuHeight }}>
+    <div className="dropdown" style={{ height: menuHeight }} ref={dropdownRef}>
 
-      <CSSTransition 
-        in={activeMenu === 'main'} 
+      <CSSTransition
+        in={activeMenu === 'main'}
         timeout={500}
-        className="menu-primary"
-        unmountOnExit 
+        classNames="menu-primary"
+        unmountOnExit
         onEnter={calcHeight}>
-          <div className="menu">
-            <DropdownItem icon="🍳">My Profile</DropdownItem> 
-            <DropdownItem
-              leftIcon= "🌑"
-              rightIcon= "🌿"
-              goToMenu="settings">
-              Shivam Sakore
-            </DropdownItem>
-          </div>
+        <div className="menu">
+          <DropdownItem>My Profile</DropdownItem>
+          <DropdownItem
+            leftIcon={<CogIcon />}
+            rightIcon={<ChevronIcon />}
+            goToMenu="settings">
+            Settings
+          </DropdownItem>
+          <DropdownItem
+            leftIcon="🦧"
+            rightIcon={<ChevronIcon />}
+            goToMenu="animals">
+            Animals
+          </DropdownItem>
+
+        </div>
       </CSSTransition>
       
-      <CSSTransition 
-        in={activeMenu === 'settings'} 
-        unmountOnExit 
+      <CSSTransition
+        in={activeMenu === 'settings'}
         timeout={500}
-        className="menu-secondary"
+        classNames="menu-secondary"
+        unmountOnExit
         onEnter={calcHeight}>
-          <div className="menu">
-            <DropdownItem icon="👈" goToMenu="main"/>
-            <DropdownItem icon="🍳">My Settings</DropdownItem> 
-            <DropdownItem icon="🍳">My Settings</DropdownItem> 
-            <DropdownItem icon="🍳">My Settings</DropdownItem> 
-            <DropdownItem icon="🍳">My Settings</DropdownItem> 
-            <DropdownItem icon="🍳">My Settings</DropdownItem> 
-            <DropdownItem icon="🍳">My Settings</DropdownItem> 
-            <DropdownItem icon="🍳">My Settings</DropdownItem> 
-            <DropdownItem
-              leftIcon= "🌑"
-              rightIcon= "🌿">
-              Shivam Sakore
-            </DropdownItem>
-          </div>
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>My Tutorial</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>HTML</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>CSS</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>JavaScript</DropdownItem>
+          <DropdownItem leftIcon={<BoltIcon />}>Awesome!</DropdownItem>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={activeMenu === 'animals'}
+        timeout={500}
+        classNames="menu-secondary"
+        unmountOnExit
+        onEnter={calcHeight}>
+        <div className="menu">
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>Animals</h2>
+          </DropdownItem>
+          <DropdownItem leftIcon="🦘">Kangaroo</DropdownItem>
+          <DropdownItem leftIcon="🐸" rightIcon= "🌿">Frog</DropdownItem>
+          <DropdownItem leftIcon="🦋">Horse?</DropdownItem>
+          <DropdownItem leftIcon="🦔">Hedgehog</DropdownItem>
+        </div>
       </CSSTransition>
     </div>
   );
 }
-
+*/}
 export default App;
